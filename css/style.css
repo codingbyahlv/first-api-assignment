@@ -1,0 +1,191 @@
+/*general styling*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: rgb(39, 39, 39);
+    font-family: 'Oswald', sans-serif;
+}
+[class*="col-"]{
+    width: 100%;
+}
+@media screen and (min-width:800px){
+    .col-4 {width: 33.33%;}
+    .col-8 {width: 66.66%;}
+    .col-12 {width: 100%;}
+}
+
+/*header section*/
+.header {
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    padding: 10px 0;
+    color: white;
+    text-transform: uppercase;
+    background-color: #a4ac86;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.header img {
+    max-height: 100px;
+    object-fit: contain;
+}
+.header h2 {
+    display: inline;
+    font-size: 65px;  
+    padding-bottom: 5px;
+}
+@media screen and (min-width:800px){
+    header {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .header {
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 10%;
+        margin: 20px 0 10px 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    .header h2 {
+        margin-right: 50px;
+    }
+    .header img {
+        max-height: 150px;
+    }
+}
+
+/*main section*/
+main {
+    display: flex;
+    justify-content: center;
+}
+.loader {
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-size: 40px;;
+    border: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*card section*/
+#card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 60vh;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 10px;
+    padding: 20px;
+    min-height: 35vh;
+    background-color: #414833;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.card-name {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.card-year {
+    text-align: right;
+}
+
+@media screen and (min-width:800px){
+    .card {
+        width: 25%;
+    }
+    .card-year {
+        display: none;
+    }
+    .card:hover .card-year {
+        display: block;
+    }
+}
+
+/*movie modal*/
+#modal-wrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+        top: 0;
+        left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.616);
+    z-index: 1;
+}
+#modal-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+    background-color: white;
+}
+.modal-loader {
+    width: 50px;
+    height: 50px;
+    margin-top: 30%;
+    color: black;
+    font-size: 40px;;
+    border: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    padding: 15px;
+    background-color: white;
+    border-bottom: 2px solid silver;
+}
+.modal-header h2 {
+    text-transform: uppercase;
+}
+.modal-header span {
+    cursor: pointer;
+    text-transform: uppercase;
+}
+#modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+#modal-body div {
+    width: 40%;
+    text-align: center;
+}

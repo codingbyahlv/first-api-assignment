@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Assignment - Web communication</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="https://kit.fontawesome.com/38e66b1324.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header col-8">
+                <h2>Star Wars</h2>
+                <img src="./media/img/figure-g83dbb0937_1280.png">
+            </div>
+        </header>
+        <main>
+            <!--the movie cards-->
+            <section class="col-12">
+                <div id="card-container" class="col-12">
+                    <button class="loader"><i class="fa fa-spinner fa-spin"></i></button>
+                    <!--JS-->
+                </div>
+            </section>
+
+            <!--the movie modal-->
+            <section id="modal-wrapper">
+                <div id="modal-container"  class="col-4">
+                    <div class="modal-header">
+                        <h2 id="movie-title"><!--JS--></h2> 
+                        <span onclick="closeMovieModal()"id="closing-btn"><i class="fas fa-chevron-left"></i> Return</span>
+                    </div>
+                    <div id="modal-body">
+                        <button class="modal-loader"><i class="fa fa-spinner fa-spin"></i></button>
+                        <!--JS-->
+                    </div>
+                </div>
+            </section>
+        </main> 
+        <script src="./js/app.js" async defer></script>
+    </body>
+</html>
